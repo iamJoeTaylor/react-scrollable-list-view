@@ -1,8 +1,9 @@
 {
   "name": "react-scrollable-list-view",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
-  "main": "lib/index.js",
+  "main": "dist/ReactScrollableListView.min.js",
+  "jsnext:main": "lib/index.js",
   "scripts": {
     "build": "npm run build:lib && npm run build:dist",
     "build:lib": "react-build-lib",
@@ -10,6 +11,10 @@
     "prepublish": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "lib/*",
+    "dist/*"
+  ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
