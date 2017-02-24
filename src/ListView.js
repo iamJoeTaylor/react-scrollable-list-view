@@ -199,7 +199,7 @@ class ListView extends React.Component {
         Number(child.props.height) :
         this.props.aveCellHeight;
 
-      const isSticky = child.type.listViewComponentType === ITEM_TYPES.STICKY_ITEM;
+      const isSticky = child.type && child.type.listViewComponentType === ITEM_TYPES.STICKY_ITEM;
 
       // Add this child to our internal refrence
       this.items[child.key] = {
@@ -617,9 +617,8 @@ const createItemWithType = type => {
 const ListViewItem = createItemWithType(ITEM_TYPES.LIST_ITEM);
 const ListViewStickyItem = createItemWithType(ITEM_TYPES.STICKY_ITEM);
 
-export {
+export default {
+  ListView,
   ListViewItem,
   ListViewStickyItem,
-};
-
-export default ListView;
+}

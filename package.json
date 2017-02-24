@@ -2,7 +2,7 @@
   "name": "react-scrollable-list-view",
   "version": "1.0.3",
   "description": "",
-  "main": "dist/ReactScrollableListView.min.js",
+  "main": "dist/ReactScrollableListView.js",
   "jsnext:main": "lib/index.js",
   "scripts": {
     "build": "npm run build:lib && npm run build:dist",
