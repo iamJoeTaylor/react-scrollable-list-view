@@ -623,4 +623,3 @@ export {
 };
 
 export default ListView;
-
