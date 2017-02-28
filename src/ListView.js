@@ -333,7 +333,9 @@ class ListView extends React.Component {
 
     if (this.stickyItems.length) {
       const stickyItems = this.stickyItems.slice().reverse();
-      const activeStickyItem = stickyItems.find(item => item.index <= newState.currentAnchorIndex);
+      const activeStickyItems = stickyItems
+        .filter(item => item.index <= newState.currentAnchorIndex);
+      const activeStickyItem = activeStickyItems[0];
       if (activeStickyItem) {
         newState.activeStickyItem = activeStickyItem.index;
       } else {

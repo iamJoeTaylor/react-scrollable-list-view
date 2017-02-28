@@ -1,5 +1,7 @@
 # react-scrollable-list-view
 
+List View component to handle cell recycling, positioning, measuring, and more.
+
 ```js
 import { ListView, ListViewItem } from 'react-scrollable-list-view';
 // In your render...
