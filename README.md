@@ -23,8 +23,45 @@ More options and configurations below.
 
 ### Install
 
-- Npm: `npm install --save react-scrollable-list-view`
+- Npm: `npm install -S react-scrollable-list-view`
 
+`react` and `react-dom` are external dependencies for this component. This means you need to have
+is installed and available in project.
+
+If you build with webpack or similar build system then having them installed as a dependency is
+enough. `npm install -S react react-dom`
+
+#### CSS
+
+Currently CSS is not bundled with this component. This will come in a later version. I recommend you
+include CSS similar to:
+
+```sass
+.ListView
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  overflow-y: scroll
+  overflow-x: hidden
+
+  // Smooth momentum scrolling
+  -webkit-overflow-scrolling: touch
+
+  .ListView-content
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+
+.ListView-runway
+  position: absolute
+  height: 1px
+  width: 1px
+  transition: transform 0.2s
+```
 
 ## What is it used for
 
