@@ -1,6 +1,6 @@
 {
   "name": "react-scrollable-list-view",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "List View component to handle cell recycling, positioning, measuring, and more.",
   "main": "dist/ReactScrollableListView.js",
   "jsnext:main": "lib/index.js",
@@ -43,7 +43,6 @@
     "react-build-lib": "0.0.2",
     "react-dom": "^15.4.2"
   },
-
   "react-build-dist": {
     "externals": {
       "react": "react",
