@@ -7,7 +7,7 @@
   "scripts": {
     "build": "npm run build:lib && npm run build:dist",
     "build:lib": "react-build-lib",
-    "build:dist": "react-build-dist --bundle-name ReactScrollableListView.js",
+    "build:dist": "react-build-dist --bundle-name ReactScrollableListView.js -p $(pwd)",
     "prepublish": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -42,5 +42,12 @@
     "react-build-dist": "iamJoeTaylor/react-build-dist",
     "react-build-lib": "0.0.2",
     "react-dom": "^15.4.2"
+  },
+
+  "react-build-dist": {
+    "externals": {
+      "react": "react",
+      "react-dom": "react-dom"
+    }
   }
 }
