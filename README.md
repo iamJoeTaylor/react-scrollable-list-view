@@ -12,7 +12,7 @@ import { ListView, ListViewItem } from 'react-scrollable-list-view';
 >
   {
     Array.apply(null, Array(3))
-      .forEach((_, i) => 
+      .forEach((_, i) =>
         <ListViewItem height={250} key={i}><div>Item at Index: {i}</div></ListViewItem>
       )
   }
@@ -33,8 +33,8 @@ enough. `npm install -S react react-dom`
 
 #### CSS
 
-Currently CSS is not bundled with this component. This will come in a later version. I recommend you
-include CSS similar to:
+CSS similar to what is below is included with the Component automatically
+with the help of [Styled-Components](https://github.com/styled-components/styled-components).
 
 ```sass
 .ListView
@@ -60,7 +60,6 @@ include CSS similar to:
   position: absolute
   height: 1px
   width: 1px
-  transition: transform 0.2s
 ```
 
 ## What is it used for
@@ -144,7 +143,7 @@ Optional. Index to start as anchor item.
 <ListView aveCellHeight={250}>
   {
     Array.apply(null, Array(3))
-      .forEach((_, i) => 
+      .forEach((_, i) =>
         <ListViewItem height={250} key={i}><div>Item at Index: {i}</div></ListViewItem>
       )
   }
@@ -167,7 +166,7 @@ set, on rezise we remeasure as well.
 <ListView aveCellHeight={250}>
   {
     Array.apply(null, Array(3))
-      .forEach((_, i) => 
+      .forEach((_, i) =>
         <ListViewStickyItem height={250} key={i}><div>Item at Index: {i}</div></ListViewStickyItem>
       )
   }

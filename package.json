@@ -48,5 +48,8 @@
       "react": "react",
       "react-dom": "react-dom"
     }
+  },
+  "dependencies": {
+    "styled-components": "^1.4.4"
   }
 }

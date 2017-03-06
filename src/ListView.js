@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import styled from 'styled-components';
 
 // Next Features:
 //  * Tombstones
@@ -33,6 +34,34 @@ const getScrollTop = element => element.scrollTop;
 const isVariableHeight = item =>
   ITEM_TYPES_VALUES.indexOf(item.type.listViewComponentType) < 0 ||
   (ITEM_TYPES_VALUES.indexOf(item.type.listViewComponentType) >= 0 && !item.props.height);
+
+const ListViewComponent = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  opacity: ${ ({styledIsHidden}) => styledIsHidden ? '0' : '1' };
+
+  -webkit-overflow-scrolling: touch;
+`;
+
+const ListViewContentComponent = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+`;
+
+const ListViewRunwayComponent = styled.div`
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  transform: ${ ({styledRunwayHeight}) => `translateY(${styledRunwayHeight}px)` };
+`;
 
 class ListView extends React.Component {
   constructor(props) {
@@ -499,26 +528,21 @@ class ListView extends React.Component {
   }
 
   render() {
-    const style = {};
     const currentItems = this.getItems();
     const runwayHeight = this.getRunwayHeight();
 
-    if (!Number.isNaN(this.props.initialIndex) && !this.scroller) {
-      style.opacity = 0;
-    }
-
     return (
-      <div
+      <ListViewComponent
         className="ListView"
-        style={style}
-        ref={ref => {
+        styledIsHidden={!Number.isNaN(this.props.initialIndex) && !this.scroller}
+        innerRef={ref => {
           if (!ref) return;
           this.scroller = ReactDOM.findDOMNode(ref);
         }}
       >
-        <div
+        <ListViewContentComponent
           className="ListView-content"
-          ref={ref => {
+          innerRef={ref => {
             if (!ref) return;
             // Need to capture stats on the ListView position so we can align items
             this.listViewBoundingBox = ReactDOM.findDOMNode(ref).getBoundingClientRect();
@@ -542,20 +566,17 @@ class ListView extends React.Component {
               null
           }
 
-          <div
-            className="ListView-runway"
-            style={{ transform: `translateY(${runwayHeight}px)` }}
-          >
+          <ListViewRunwayComponent className="ListView-runway" styledRunwayHeight={runwayHeight}>
             {
               this.state.pendingRequest && this.props.loadingSpinner ?
                 this.props.loadingSpinner :
                 null
             }
-          </div>
+          </ListViewRunwayComponent>
 
           {currentItems}
-        </div>
-      </div>
+        </ListViewContentComponent>
+      </ListViewComponent>
     );
   }
 }
