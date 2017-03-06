@@ -41,7 +41,8 @@
     "react": "^15.4.2",
     "react-build-dist": "iamJoeTaylor/react-build-dist",
     "react-build-lib": "0.0.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "styled-components": "^1.4.4"
   },
   "react-build-dist": {
     "externals": {
@@ -50,6 +51,5 @@
     }
   },
   "dependencies": {
-    "styled-components": "^1.4.4"
   }
 }
