@@ -50,5 +50,7 @@
       "react-dom": "react-dom"
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "prop-types": "^15.6.0"
+  }
 }
