@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
+
 import styled from 'styled-components';
 
 // Next Features:
@@ -581,32 +583,32 @@ class ListView extends React.Component {
   }
 }
 ListView.propTypes = {
-  aveCellHeight: React.PropTypes.number,
-  children: React.PropTypes.oneOfType([
-    React.PropTypes.element,
-    React.PropTypes.arrayOf(React.PropTypes.element),
+  aveCellHeight: PropTypes.number,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
   ]),
   // Has more Items to load?
-  hasMore: React.PropTypes.bool,
-  header: React.PropTypes.oneOfType([
-    React.PropTypes.element,
-    React.PropTypes.arrayOf(React.PropTypes.element),
+  hasMore: PropTypes.bool,
+  header: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
   ]),
-  loadingSpinner: React.PropTypes.oneOfType([
-    React.PropTypes.element,
-    React.PropTypes.arrayOf(React.PropTypes.element),
+  loadingSpinner: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
   ]),
   // Function called when scroll nears bottom
   // OPTIONAL: can return a promise to control request flow and show loading
-  loadMore: React.PropTypes.func,
+  loadMore: PropTypes.func,
   // Number of items from the end of the list to call laodMore at
-  loadMoreItemOffset: React.PropTypes.number,
+  loadMoreItemOffset: PropTypes.number,
   // Number of items to instantiate beyond current view in the scroll direction.
-  runwayItems: React.PropTypes.number,
+  runwayItems: PropTypes.number,
   // Number of items to instantiate beyond current view in the opposite direction.
-  runwayItemsOpposite: React.PropTypes.number,
+  runwayItemsOpposite: PropTypes.number,
   // Index to start as anchor item
-  initialIndex: React.PropTypes.number,
+  initialIndex: PropTypes.number,
 };
 
 ListView.defaultProps = {
@@ -628,9 +630,9 @@ const createItemWithType = type => {
   }
   ItemShell.listViewComponentType = type;
   ItemShell.propTypes = {
-    children: React.PropTypes.oneOfType([
-      React.PropTypes.element,
-      React.PropTypes.arrayOf(React.PropTypes.element),
+    children: PropTypes.oneOfType([
+      PropTypes.element,
+      PropTypes.arrayOf(PropTypes.element),
     ]),
   };
 
