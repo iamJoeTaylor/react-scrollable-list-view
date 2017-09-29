@@ -39,7 +39,7 @@
   "homepage": "https://github.com/iamJoeTaylor/react-scrollable-list-view#readme",
   "devDependencies": {
     "react": "^15.4.2",
-    "react-build-dist": "iamJoeTaylor/react-build-dist",
+    "react-build-dist": "^0.0.8",
     "react-build-lib": "0.0.2",
     "react-dom": "^15.4.2",
     "styled-components": "^1.4.4"
